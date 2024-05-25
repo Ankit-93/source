@@ -7,7 +7,8 @@ from nltk import word_tokenize
 import string
 import re
 import random
-
+import nltk
+nltk.download('punkt')
 
 cList = {
   "ain't": "am not",
