@@ -1,4 +1,4 @@
-from utils.config import *
+from source.utils.config import *
 
 
 
