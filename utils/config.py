@@ -1,14 +1,14 @@
-import numpy as np
 #from __future__ import division
 import io
 import unicodedata
 import nltk
-from nltk import word_tokenize
-import string
-import re
-import random
-import nltk
 nltk.download('punkt')
+import numpy as np
+from nltk import word_tokenize
+import math, re, random, string, pickle
+import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 cList = {
   "ain't": "am not",
