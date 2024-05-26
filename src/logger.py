@@ -51,7 +51,7 @@ def get_logger(name, level=logging.INFO, log_file=None, console=True):
     return logger
 
 # Test the logger
-logger = get_logger(name="appLog", level=logging.DEBUG, log_file="app.log", console=True)
+logger = get_logger(name="appLog", level=logging.DEBUG, log_file="app.log", console=False)
 logger.info("Logging has started...")
 
 #     logging.info("Logging has started...")
