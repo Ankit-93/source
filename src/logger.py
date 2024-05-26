@@ -31,8 +31,11 @@ def get_logger(name, level=logging.INFO, log_file=None, console=True):
     # Create handlers
     handlers = []
     if log_file:
-        file_handler = logging.handlers.RotatingFileHandler(log_file, maxBytes=10**6, backupCount=3)
-        handlers.append(file_handler)
+        try:
+            file_handler = logging.handlers.RotatingFileHandler(log_file, maxBytes=10**6, backupCount=3)
+            handlers.append(file_handler)
+        except Exception as e:
+            print("Error occurred while setting up file handler:", e)
     if console:
         console_handler = logging.StreamHandler()
         handlers.append(console_handler)
@@ -47,8 +50,8 @@ def get_logger(name, level=logging.INFO, log_file=None, console=True):
     
     return logger
 
+# Test the logger
 logger = get_logger(name="appLog", level=logging.DEBUG, log_file="app.log", console=True)
-
-# if __name__=="__main__":
+logger.info("Logging has started...")
 
 #     logging.info("Logging has started...")
